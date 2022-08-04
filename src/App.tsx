@@ -23,11 +23,6 @@ function App() {
           Learn React
         </a>
         Hello */}
-         <Chatbot
-            config={config}
-            messageParser={MessageParser}
-            actionProvider={ActionProvider}
-          />
       </header>
       <div className="main-container">
         <div className='trigger-container'>
@@ -36,7 +31,11 @@ function App() {
           </button>
         </div>
         <div className='chatbot-container'>
-       
+          <Chatbot
+            config={config}
+            messageParser={MessageParser}
+            actionProvider={ActionProvider}
+          />
         </div>
       </div>
     </div>
