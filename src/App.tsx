@@ -1,12 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+import Chatbot from 'react-chatbot-kit';
+
 import './App.css';
+import config from './config/chatbotConfig';
+import MessageParser from './chatbot/MessageParser';
+import ActionProvider from './chatbot/ActionProvider';
 
 function App() {
-  return (
+  return ( 
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -18,8 +22,23 @@ function App() {
         >
           Learn React
         </a>
-        Hello
+        Hello */}
+         <Chatbot
+            config={config}
+            messageParser={MessageParser}
+            actionProvider={ActionProvider}
+          />
       </header>
+      <div className="main-container">
+        <div className='trigger-container'>
+          <button className='trigger-button'>
+            trigger chatbot
+          </button>
+        </div>
+        <div className='chatbot-container'>
+       
+        </div>
+      </div>
     </div>
   );
 }
