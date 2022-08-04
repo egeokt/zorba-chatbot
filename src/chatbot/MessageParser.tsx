@@ -3,7 +3,7 @@ import React from 'react';
 const MessageParser = ({ children, actions }:any) => {
   const parse = (message:string) => {
       if (message.includes('hello')) {
-          console.log('hi');
+          actions.handleHello();
       }
     console.log(message);
   };

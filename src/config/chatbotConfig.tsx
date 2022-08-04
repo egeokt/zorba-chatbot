@@ -1,4 +1,5 @@
-import { createChatBotMessage } from "react-chatbot-kit";
+import { Chatbot, createChatBotMessage } from "react-chatbot-kit";
+import ActionProvider from "../chatbot/ActionProvider";
 
 import FeedbackOptions from "../chatbot/components/FeedbackOptions/FeedbackOptions";
 
@@ -21,7 +22,9 @@ const config = {
         {
             widgetName: "feedbackOptions",
             widgetFunc: (props: any) => <FeedbackOptions { ...props } />,
-            props: null,
+            props: {
+                actionProvider: ActionProvider,
+            },
             mapStateToProps: [],
         },
     ]

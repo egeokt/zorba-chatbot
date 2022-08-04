@@ -5,6 +5,7 @@ import './App.css';
 import config from './config/chatbotConfig';
 import MessageParser from './chatbot/MessageParser';
 import ActionProvider from './chatbot/ActionProvider';
+import ErrorBoundary from './chatbot/components/ErrorBoundary/ErrorBoundary';
 
 function App() {
   return ( 
@@ -27,15 +28,17 @@ function App() {
       <div className="main-container">
         <div className='trigger-container'>
           <button className='trigger-button'>
-            trigger chatbot
+            Zorba Chatbot
           </button>
         </div>
         <div className='chatbot-container'>
-          <Chatbot
+          <ErrorBoundary>
+            <Chatbot
             config={config}
             messageParser={MessageParser}
             actionProvider={ActionProvider}
           />
+          </ErrorBoundary>
         </div>
       </div>
     </div>
